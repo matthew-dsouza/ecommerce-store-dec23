@@ -6,9 +6,13 @@ import Container from "@/components/ui/container";
 
 export const revalidate = 0;
 
+// let overviewBillboardID = "5fdb4c00-733e-4df4-86de-4e3e7be51fbb";
+let overviewBillboard = process.env.OVERVIEW_BILLBOARD_ID;
+
 const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("c4c14a4f-d1ca-4cde-a4a6-a9e3b6aa6df5");
+  // const billboard = await getBillboard(overviewBillboardID);
+  const billboard = await getBillboard(overviewBillboard!);
 
   return (
     <Container>
